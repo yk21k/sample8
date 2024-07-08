@@ -40,9 +40,9 @@ Route::resource('orders', OrderController::class)->only('store')->middleware('au
 
 
 
-Route::get('paypal/checkout', [App\Http\Controllers\PayPalController::class, 'getExpressCheckout'])->name('paypal.checkout');
+Route::get('paypal/checkout/{order}', [App\Http\Controllers\PayPalController::class, 'getExpressCheckout'])->name('paypal.checkout');
 
-Route::get('paypal/checkout-success', [App\Http\Controllers\PayPalController::class, 'getExpressCheckoutSuccess'])->name('paypal.success');
+Route::get('paypal/checkout-success/{order}', [App\Http\Controllers\PayPalController::class, 'getExpressCheckoutSuccess'])->name('paypal.success');
 
 Route::get('paypal/checkout-cancel', [App\Http\Controllers\PayPalController::class, 'cancelPage'])->name('paypal.cancel');
 

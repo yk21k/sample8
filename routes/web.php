@@ -48,9 +48,6 @@ Route::get('paypal/checkout-cancel', [App\Http\Controllers\PayPalController::cla
 
 
 
-
-
-
-
-
-
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
